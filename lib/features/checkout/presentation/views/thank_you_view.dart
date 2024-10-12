@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/build_app_bar.dart';
@@ -11,7 +10,7 @@ class ThankYouView extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Scaffold(
-      appBar: buildAppBar(theme: theme, title: '' , onPressed: (){}),
+      appBar: buildAppBar(theme: theme, title: '', onPressed: () {}),
       body: Transform.translate(
           offset: const Offset(0, -16), child: const ThankYouViewBody()),
     );

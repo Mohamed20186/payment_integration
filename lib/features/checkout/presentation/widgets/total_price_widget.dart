@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 class TotalPrice extends StatelessWidget {
   const TotalPrice({super.key, required this.title, required this.value});
