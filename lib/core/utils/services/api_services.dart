@@ -11,7 +11,7 @@ class ApiServices {
         data: body,
         options: Options(
           contentType: Headers.formUrlEncodedContentType,
-          headers: {'Authorization': "Bearer $token "},
+          headers: {'Authorization': "Bearer $token"},
         ));
     return response;
   }

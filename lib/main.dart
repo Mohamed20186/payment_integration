@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/routes/page_route_name.dart';
 import 'package:payment_integration/core/routes/route_generator.dart';
-import 'core/utils/app_theme_manager.dart';
+import 'core/utils/theme/app_theme_manager.dart';
 
 void main() {
   runApp(CheckOutApp());
