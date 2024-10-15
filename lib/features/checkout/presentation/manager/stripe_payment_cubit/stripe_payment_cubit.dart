@@ -7,9 +7,10 @@ import 'package:payment_integration/features/checkout/domain/repository/checkout
 part 'stripe_payment_state.dart';
 
 class StripePaymentCubit extends Cubit<StripePaymentCubitState> {
-  StripePaymentCubit() : super(StripePaymentCubitInitial());
+  StripePaymentCubit({required this.checkoutRepo})
+      : super(StripePaymentCubitInitial());
 
-  final CheckoutRepo checkoutRepo = CheckoutRepoImp();
+  CheckoutRepo checkoutRepo;
 
   Future<void> execute(
       {required PaymentIntentInputModel paymentIntentInputModel}) async {

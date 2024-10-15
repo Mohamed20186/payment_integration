@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:payment_integration/core/routes/page_route_name.dart';
+import 'package:payment_integration/features/checkout/data/repository/checkout_repo_imp.dart';
+import 'package:payment_integration/features/checkout/presentation/manager/stripe_payment_cubit/stripe_payment_cubit.dart';
 import 'package:payment_integration/features/checkout/presentation/widgets/payment_methods_bottom_sheet.dart';
 import '../../../../core/widgets/custom_elevated_button.dart';
 import 'order_info_item.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyCardViewBody extends StatelessWidget {
   const MyCardViewBody({super.key});
@@ -57,7 +60,11 @@ class MyCardViewBody extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16)),
                 builder: (context) {
-                  return const PaymentMethodsBottomSheet();
+                  return BlocProvider(
+                    create: (context) =>
+                        StripePaymentCubit(checkoutRepo: CheckoutRepoImp()),
+                    child: const PaymentMethodsBottomSheet(),
+                  );
                 }),
           ),
           const SizedBox(height: 40),

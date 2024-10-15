@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import '../utils/theme/colors_palette.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  CustomElevatedButton({
+  const CustomElevatedButton({
     required this.onPressed,
     required this.text,
     super.key,
+    this.isLoading = false,
   });
   final VoidCallback onPressed;
   final String text;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -22,10 +24,12 @@ class CustomElevatedButton extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Text(
-        text,
-        style: theme.textTheme.bodyMedium,
-      ),
+      child: isLoading
+          ? const CircularProgressIndicator()
+          : Text(
+              text,
+              style: theme.textTheme.bodyMedium,
+            ),
     );
   }
 }
